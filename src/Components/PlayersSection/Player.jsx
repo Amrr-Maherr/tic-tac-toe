@@ -8,8 +8,9 @@ function Player({ PlayerName, PlayerSymbol }) {
     <PlayerEdit
       PlayerName={Name}
       setPlayerName={SetName}
-      onSave={() => {
-        setIsEdit(false);
+          onSave={() => {
+          // update the prev state
+        setIsEdit((prev)=>!prev);
       }}
     />
   ) : (

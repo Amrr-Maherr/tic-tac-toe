@@ -1,13 +1,10 @@
 import { useState } from "react";
 
 function PlayerEdit({ PlayerName, onSave, setPlayerName }) {
-    const [NewName,setNewName] = useState("")
+    const [NewName, setNewName] = useState("")
+    // handel player name change 
     const HandelPlayerInfo = () => {
         if (NewName === "") {
-           const confirmSave = window.confirm(
-             "Do you want to save without a name?"
-            );
-            if (!confirmSave) return;
             setNewName(PlayerName)
         } else {
             setPlayerName(NewName);
@@ -28,7 +25,7 @@ function PlayerEdit({ PlayerName, onSave, setPlayerName }) {
           placeholder="Player Name"
         />
       </span>
-      <button onClick={HandelPlayerInfo}>Save</button>
+      <button disabled={NewName ? false : true} onClick={HandelPlayerInfo}>Save</button>
     </li>
   );
 }
