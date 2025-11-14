@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function PlayerEdit({ PlayerName, onSave, setPlayerName }) {
-    const [NewName, setNewName] = useState("")
+    const [NewName, setNewName] = useState(PlayerName);
     // handel player name change 
     const HandelPlayerInfo = () => {
         if (NewName === "") {
