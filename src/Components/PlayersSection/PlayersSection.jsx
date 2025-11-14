@@ -1,11 +1,19 @@
 import Player from "./Player";
 
-function PlayersSection() {
+function PlayersSection({isActive}) {
     return (
       <main>
-        <ol id="players">
-          <Player PlayerName="Amr" PlayerSymbol="X" />
-          <Player PlayerName="Nour" PlayerSymbol="O" />
+        <ol id="players" className="highlight-player">
+          <Player
+            PlayerName="Player 1"
+            PlayerSymbol="X"
+            isActive={isActive === "X"}
+          />
+          <Player
+            PlayerName="Player 2"
+            PlayerSymbol="O"
+            isActive={isActive === "O"}
+          />
         </ol>
       </main>
     );

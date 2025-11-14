@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PlayerEdit from "./PlayerEdit";
 
-function Player({ PlayerName, PlayerSymbol }) {
+function Player({ PlayerName, PlayerSymbol,isActive }) {
     const [isEdit, setIsEdit] = useState(false);
     const [Name, SetName] = useState(PlayerName);
   return isEdit ? (
@@ -14,7 +14,7 @@ function Player({ PlayerName, PlayerSymbol }) {
       }}
     />
   ) : (
-    <li>
+    <li className={isActive ? "active" : ""}>
       <span className="player">
         <span className="player-name">{Name}</span>
         <span className="player-symbol">{PlayerSymbol}</span>
