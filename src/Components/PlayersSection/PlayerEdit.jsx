@@ -4,6 +4,10 @@ function PlayerEdit({ PlayerName, onSave, setPlayerName }) {
     const [NewName,setNewName] = useState("")
     const HandelPlayerInfo = () => {
         if (NewName === "") {
+           const confirmSave = window.confirm(
+             "Do you want to save without a name?"
+            );
+            if (!confirmSave) return;
             setNewName(PlayerName)
         } else {
             setPlayerName(NewName);
